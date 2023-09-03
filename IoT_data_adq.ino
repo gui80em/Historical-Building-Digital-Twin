@@ -99,26 +99,12 @@ void loop() {
               "Host: "+host+"\r\n"+
               "Connection: close\r\n\r\n");
   client.stop(); delay(10000);
-
+  ThingSpeak.setField(1,lux);
+  ThingSpeak.setField(2,temperature);
+  ThingSpeak.setField(3,humidity);
+  ThingSpeak.setField(4,carbonDioxide);
+  ThingSpeak.writeFields(numeroDelChannel,writeAPIKey);
 
   Serial.println("Escriptura completada");
   delay(10000);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-  // ThingSpeak.setField(1,lux);
-  // ThingSpeak.setField(2,temperature);
-  // ThingSpeak.setField(3,humidity);
-  // ThingSpeak.setField(4,carbonDioxide);
-  // ThingSpeak.writeFields(numeroDelChannel,writeAPIKey);
